@@ -40,6 +40,7 @@
             this.picLogo = new System.Windows.Forms.PictureBox();
             this.lblShopName = new System.Windows.Forms.Label();
             this.lstCheck = new System.Windows.Forms.ListBox();
+            this.btnFeedback = new System.Windows.Forms.Button();
             this.pnlBottom.SuspendLayout();
             this.pnlCheck.SuspendLayout();
             this.pnlTop.SuspendLayout();
@@ -50,12 +51,13 @@
             // 
             this.pnlBottom.BackColor = System.Drawing.Color.MistyRose;
             this.pnlBottom.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlBottom.Controls.Add(this.btnFeedback);
             this.pnlBottom.Controls.Add(this.pnlCheck);
             this.pnlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlBottom.Location = new System.Drawing.Point(0, 346);
+            this.pnlBottom.Location = new System.Drawing.Point(0, 320);
             this.pnlBottom.Margin = new System.Windows.Forms.Padding(5);
             this.pnlBottom.Name = "pnlBottom";
-            this.pnlBottom.Size = new System.Drawing.Size(325, 205);
+            this.pnlBottom.Size = new System.Drawing.Size(325, 247);
             this.pnlBottom.TabIndex = 19;
             // 
             // pnlCheck
@@ -68,7 +70,7 @@
             this.pnlCheck.Controls.Add(this.lblOrderDate);
             this.pnlCheck.Location = new System.Drawing.Point(3, 4);
             this.pnlCheck.Name = "pnlCheck";
-            this.pnlCheck.Size = new System.Drawing.Size(315, 193);
+            this.pnlCheck.Size = new System.Drawing.Size(315, 187);
             this.pnlCheck.TabIndex = 0;
             // 
             // lblInfo
@@ -179,15 +181,28 @@
             this.lstCheck.ItemHeight = 16;
             this.lstCheck.Location = new System.Drawing.Point(0, 118);
             this.lstCheck.Name = "lstCheck";
-            this.lstCheck.Size = new System.Drawing.Size(325, 228);
+            this.lstCheck.Size = new System.Drawing.Size(325, 202);
             this.lstCheck.TabIndex = 21;
+            // 
+            // btnFeedback
+            // 
+            this.btnFeedback.BackColor = System.Drawing.Color.LightCoral;
+            this.btnFeedback.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFeedback.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnFeedback.Location = new System.Drawing.Point(42, 201);
+            this.btnFeedback.Name = "btnFeedback";
+            this.btnFeedback.Size = new System.Drawing.Size(239, 32);
+            this.btnFeedback.TabIndex = 1;
+            this.btnFeedback.Text = "Оставить отзыв";
+            this.btnFeedback.UseVisualStyleBackColor = false;
+            this.btnFeedback.Click += new System.EventHandler(this.btnFeedback_Click);
             // 
             // fmCheck
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(325, 551);
+            this.ClientSize = new System.Drawing.Size(325, 567);
             this.Controls.Add(this.lstCheck);
             this.Controls.Add(this.pnlTop);
             this.Controls.Add(this.pnlBottom);
@@ -218,5 +233,6 @@
         private System.Windows.Forms.Label lblDiscount;
         private System.Windows.Forms.Label lblCost;
         private System.Windows.Forms.Label lblOrderDate;
+        private System.Windows.Forms.Button btnFeedback;
     }
 }

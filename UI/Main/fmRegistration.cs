@@ -54,7 +54,7 @@ namespace FlowerShop.UI.Main
                         sqlCommand.ExecuteNonQuery();
                         connection.Close();
                     }
-                    MessageBox.Show($"Регистрация сотрудника успешна!", "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Регистрация доставщика успешна!", "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     Close();
                     fmMenu fmmenu = new fmMenu();
@@ -78,7 +78,7 @@ namespace FlowerShop.UI.Main
                         sqlCommand.ExecuteNonQuery();
                         connection.Close();
                     }
-                    MessageBox.Show($"Регистрация успешна!", "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Регистрация успешна!", "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     fmAuthorization fmauth = new fmAuthorization();
                     Close();

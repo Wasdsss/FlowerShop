@@ -119,7 +119,7 @@
             this.btnRegWorker.Name = "btnRegWorker";
             this.btnRegWorker.Size = new System.Drawing.Size(211, 31);
             this.btnRegWorker.TabIndex = 7;
-            this.btnRegWorker.Text = "Добавить сотрудника";
+            this.btnRegWorker.Text = "Добавить доставщика";
             this.btnRegWorker.UseVisualStyleBackColor = false;
             this.btnRegWorker.Visible = false;
             this.btnRegWorker.Click += new System.EventHandler(this.btnRegWorker_Click);

@@ -1,4 +1,5 @@
 ﻿using FlowerShop.CLasses;
+using FlowerShop.UI.Main;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,20 +28,6 @@ namespace FlowerShop.UI.Client
 
         private void GetData()
         {
-            /*//Подсчёт суммы заказа, подсчёт скидки заказа.
-            decimal finalSumWithDiscount = 0;
-            int finalSumDiscountAmount = 0;
-
-            foreach (Order order in showOrder)
-            {
-                finalSumWithDiscount += Convert.ToDecimal(order.ProductCostWithDiscount);
-                finalSumDiscountAmount += Convert.ToInt32(order.ProductDiscount);
-            }
-            lblCost.Text = $"Сумма заказа: {finalSumWithDiscount}";
-            lblDiscount.Text = $"Сумма скидки: {finalSumDiscountAmount}%";
-            lblAdress.Text = $"Пункт выдачи: {Order.OrderAdress}";
-            lblOrderDate.Text = $"Дата заказа: {Order.OrderDate.ToString("D")}";*/
-
             decimal sumWithDiscount = 0;
             int sumDiscount = 0;
             int productCount = 0;
@@ -78,11 +65,13 @@ namespace FlowerShop.UI.Client
                     })
                     .ToList();
             lstCheck.DisplayMember = "Values";
-
-            //lstCheck.DisplayMember = "Values";
-            //lstCheck.DataSource = showOrder;
         }
 
-
+        private void btnFeedback_Click(object sender, EventArgs e)
+        {
+            fmQRCode fmqrcode = new fmQRCode();
+            Hide();
+            fmqrcode.ShowDialog();
+        }
     }
 }

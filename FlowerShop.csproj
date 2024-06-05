@@ -33,6 +33,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="QRCoder, Version=1.5.1.0, Culture=neutral, PublicKeyToken=c4ed5b9ae8358a28, processorArchitecture=MSIL">
+      <HintPath>packages\QRCoder.1.5.1\lib\net40\QRCoder.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -44,11 +49,18 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CLasses\Greeting.cs" />
     <Compile Include="CLasses\Order.cs" />
     <Compile Include="CLasses\User.cs" />
+    <Compile Include="UI\Admin\fmAddInStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Admin\fmAddInStock.Designer.cs">
+      <DependentUpon>fmAddInStock.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Client\fmCheck.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +72,12 @@
     </Compile>
     <Compile Include="UI\Admin\fmAddProduct.Designer.cs">
       <DependentUpon>fmAddProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Client\fmQRCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Client\fmQRCode.Designer.cs">
+      <DependentUpon>fmQRCode.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Main\fmAuthorization.cs">
       <SubType>Form</SubType>
@@ -93,23 +111,29 @@
     <Compile Include="UI\Client\fmQuantity.Designer.cs">
       <DependentUpon>fmQuantity.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Worker\fmChangeDiscount.cs">
+    <Compile Include="UI\Admin\fmChangeDiscount.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\Worker\fmChangeDiscount.Designer.cs">
+    <Compile Include="UI\Admin\fmChangeDiscount.Designer.cs">
       <DependentUpon>fmChangeDiscount.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Worker\fmWork.cs">
+    <Compile Include="UI\DeliveryGuy\fmWork.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\Worker\fmWork.Designer.cs">
+    <Compile Include="UI\DeliveryGuy\fmWork.Designer.cs">
       <DependentUpon>fmWork.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UI\Admin\fmAddInStock.resx">
+      <DependentUpon>fmAddInStock.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Client\fmCheck.resx">
       <DependentUpon>fmCheck.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Admin\fmAddProduct.resx">
       <DependentUpon>fmAddProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Client\fmQRCode.resx">
+      <DependentUpon>fmQRCode.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Main\fmAuthorization.resx">
       <DependentUpon>fmAuthorization.cs</DependentUpon>
@@ -136,12 +160,13 @@
     <EmbeddedResource Include="UI\Client\fmQuantity.resx">
       <DependentUpon>fmQuantity.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Worker\fmChangeDiscount.resx">
+    <EmbeddedResource Include="UI\Admin\fmChangeDiscount.resx">
       <DependentUpon>fmChangeDiscount.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Worker\fmWork.resx">
+    <EmbeddedResource Include="UI\DeliveryGuy\fmWork.resx">
       <DependentUpon>fmWork.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

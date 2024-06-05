@@ -247,6 +247,7 @@ namespace FlowerShop.UI.Main
             Close();
             fmcheck.ShowDialog();
             Show();
+            lstOrder.Items.Clear();
         }
     }
 }

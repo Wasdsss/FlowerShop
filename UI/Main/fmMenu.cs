@@ -1,4 +1,5 @@
 ﻿using FlowerShop.CLasses;
+using FlowerShop.UI.Admin;
 using FlowerShop.UI.Worker;
 using System;
 using System.Collections.Generic;
@@ -42,13 +43,13 @@ namespace FlowerShop.UI.Main
                 case 2:
                     lblFullName.Text = $" Учетная запись:\n{User.UserSurname} {User.UserName} {User.UserPatronymic}";
                     btnWork.Visible = true;
-                    ChangeDiscountToolStripMenuItem.Visible = true;
                     break;
                 case 3:
                     lblFullName.Text = $" Учетная запись: Администратор";
                     btnRegWorker.Visible = true;
                     DeleteProductToolStripMenuItem.Visible = true;
                     AddProductToolStripMenuItem.Visible = true;
+                    ChangeDiscountToolStripMenuItem.Visible = true;
                     break;
                 case 4:
                     lblFullName.Text = $" Вы находитесь в гостевом режиме";
@@ -329,7 +330,7 @@ namespace FlowerShop.UI.Main
                         command.ExecuteNonQuery();
                         connection.Close();
                     }
-                    MessageBox.Show($"Скидка успешно изменена!", "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Скидка успешно изменена!", "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ShowProducts();
                 }
                 catch (Exception ex)
@@ -355,10 +356,11 @@ namespace FlowerShop.UI.Main
         {
             int currentQuantity = Convert.ToInt32(dgvProducts.CurrentRow.Cells[2].Value);
 
-            fmChangeDiscount fmchangediscount = new fmChangeDiscount();
-            if (fmchangediscount.ShowDialog() == DialogResult.OK)
+            fmAddInStock fmaddinstock = new fmAddInStock();
+            if (fmaddinstock.ShowDialog() == DialogResult.OK)
             {
-                int newDiscount = fmchangediscount.discount;
+                int addQuantity = fmaddinstock.quantity;
+                int newQuantity = currentQuantity + addQuantity;
                 try
                 {
                     using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.connectionString))
@@ -369,16 +371,15 @@ namespace FlowerShop.UI.Main
                         command.CommandText = "UpdateQuantityInStock";
                         command.Connection = connection;
                         command.Parameters.AddWithValue("@ProductId", dgvProducts.CurrentRow.Cells[0].Value.ToString());
-                        command.Parameters.AddWithValue("@Quantity", newDiscount);
+                        command.Parameters.AddWithValue("@Quantity", newQuantity);
                         command.ExecuteNonQuery();
-                        connection.Close();
                     }
-                    MessageBox.Show($"Скидка успешно изменена!", "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Товары успешно добавлены на склад!", "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ShowProducts();
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Ошибка изменения скидки!\n{ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show($"Ошибка добавления товаров на склад!\n{ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
