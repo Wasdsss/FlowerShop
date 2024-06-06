@@ -29,6 +29,7 @@ namespace FlowerShop.UI.Main
             GetFinallySum();
             lstOrder.HorizontalScrollbar = true;
             lstOrder.ClearSelected();
+            //lstOrder.Items.Clear();
         }
 
         private void btnMakeOrder_Click(object sender, EventArgs e)
@@ -247,7 +248,6 @@ namespace FlowerShop.UI.Main
             Close();
             fmcheck.ShowDialog();
             Show();
-            lstOrder.Items.Clear();
         }
     }
 }

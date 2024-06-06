@@ -35,10 +35,11 @@
             // 
             // picQRQode
             // 
+            this.picQRQode.BackColor = System.Drawing.Color.White;
             this.picQRQode.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.picQRQode.Location = new System.Drawing.Point(29, 27);
+            this.picQRQode.Location = new System.Drawing.Point(12, 12);
             this.picQRQode.Name = "picQRQode";
-            this.picQRQode.Size = new System.Drawing.Size(304, 266);
+            this.picQRQode.Size = new System.Drawing.Size(383, 365);
             this.picQRQode.TabIndex = 0;
             this.picQRQode.TabStop = false;
             // 
@@ -46,12 +47,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(368, 325);
+            this.BackColor = System.Drawing.Color.MistyRose;
+            this.ClientSize = new System.Drawing.Size(407, 389);
             this.Controls.Add(this.picQRQode);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "fmQRCode";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Отзыв";

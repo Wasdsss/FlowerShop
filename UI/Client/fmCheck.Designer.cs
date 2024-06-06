@@ -28,8 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fmCheck));
             this.pnlBottom = new System.Windows.Forms.Panel();
+            this.btnFeedback = new System.Windows.Forms.Button();
             this.pnlCheck = new System.Windows.Forms.Panel();
             this.lblInfo = new System.Windows.Forms.Label();
             this.lblAdress = new System.Windows.Forms.Label();
@@ -40,7 +42,7 @@
             this.picLogo = new System.Windows.Forms.PictureBox();
             this.lblShopName = new System.Windows.Forms.Label();
             this.lstCheck = new System.Windows.Forms.ListBox();
-            this.btnFeedback = new System.Windows.Forms.Button();
+            this.toolTipQCode = new System.Windows.Forms.ToolTip(this.components);
             this.pnlBottom.SuspendLayout();
             this.pnlCheck.SuspendLayout();
             this.pnlTop.SuspendLayout();
@@ -59,6 +61,19 @@
             this.pnlBottom.Name = "pnlBottom";
             this.pnlBottom.Size = new System.Drawing.Size(325, 247);
             this.pnlBottom.TabIndex = 19;
+            // 
+            // btnFeedback
+            // 
+            this.btnFeedback.BackColor = System.Drawing.Color.LightCoral;
+            this.btnFeedback.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFeedback.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnFeedback.Location = new System.Drawing.Point(42, 201);
+            this.btnFeedback.Name = "btnFeedback";
+            this.btnFeedback.Size = new System.Drawing.Size(239, 32);
+            this.btnFeedback.TabIndex = 1;
+            this.btnFeedback.Text = "Оставить отзыв";
+            this.btnFeedback.UseVisualStyleBackColor = false;
+            this.btnFeedback.Click += new System.EventHandler(this.btnFeedback_Click);
             // 
             // pnlCheck
             // 
@@ -184,19 +199,6 @@
             this.lstCheck.Size = new System.Drawing.Size(325, 202);
             this.lstCheck.TabIndex = 21;
             // 
-            // btnFeedback
-            // 
-            this.btnFeedback.BackColor = System.Drawing.Color.LightCoral;
-            this.btnFeedback.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFeedback.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnFeedback.Location = new System.Drawing.Point(42, 201);
-            this.btnFeedback.Name = "btnFeedback";
-            this.btnFeedback.Size = new System.Drawing.Size(239, 32);
-            this.btnFeedback.TabIndex = 1;
-            this.btnFeedback.Text = "Оставить отзыв";
-            this.btnFeedback.UseVisualStyleBackColor = false;
-            this.btnFeedback.Click += new System.EventHandler(this.btnFeedback_Click);
-            // 
             // fmCheck
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -210,6 +212,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "fmCheck";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Чек";
             this.pnlBottom.ResumeLayout(false);
             this.pnlCheck.ResumeLayout(false);
@@ -234,5 +237,6 @@
         private System.Windows.Forms.Label lblCost;
         private System.Windows.Forms.Label lblOrderDate;
         private System.Windows.Forms.Button btnFeedback;
+        private System.Windows.Forms.ToolTip toolTipQCode;
     }
 }

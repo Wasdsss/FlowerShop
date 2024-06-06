@@ -20,7 +20,7 @@ namespace FlowerShop.UI.Client
 
         private void fmQRCode_Load(object sender, EventArgs e)
         {
-            string url = "https://forms.gle/zozE2TggFFPexJUH8";
+            string url = "https://docs.google.com/forms/d/e/1FAIpQLSdNLnk63gZ0mTiL5Mxdzr9MCiNfTf1HR5t8RzUZIuNiL8fGGA/viewform?usp=sf_link";
             picQRQode.Image = GenerateQRCode(url);
         }
 
@@ -29,7 +29,7 @@ namespace FlowerShop.UI.Client
             QRCodeGenerator qrGenerator = new QRCodeGenerator();
             QRCodeData qrCodeData = qrGenerator.CreateQrCode(text, QRCodeGenerator.ECCLevel.Q);
             QRCode qrCode = new QRCode(qrCodeData);
-            Bitmap qrCodeImage = qrCode.GetGraphic(3);
+            Bitmap qrCodeImage = qrCode.GetGraphic(6);
             return qrCodeImage;
         }
     }
