@@ -52,3 +52,11 @@ C:\Users\sasha\OneDrive\Рабочий стол\Diplom\FlowerShop\bin\Debug\QRCo
 C:\Users\sasha\OneDrive\Рабочий стол\Diplom\FlowerShop\obj\Debug\FlowerShop.UI.Admin.fmAddInStock.resources
 C:\Users\sasha\OneDrive\Рабочий стол\Diplom\FlowerShop\obj\Debug\FlowerShop.UI.Client.fmQRCode.resources
 C:\Users\sasha\OneDrive\Рабочий стол\Diplom\FlowerShop\obj\Debug\FlowerShop.csproj.CopyComplete
+C:\Users\sasha\OneDrive\Рабочий стол\Diplom\FlowerShop\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\sasha\OneDrive\Рабочий стол\Diplom\FlowerShop\bin\Debug\DocumentFormat.OpenXml.dll
+C:\Users\sasha\OneDrive\Рабочий стол\Diplom\FlowerShop\bin\Debug\DocumentFormat.OpenXml.Framework.dll
+C:\Users\sasha\OneDrive\Рабочий стол\Diplom\FlowerShop\bin\Debug\itextsharp.dll
+C:\Users\sasha\OneDrive\Рабочий стол\Diplom\FlowerShop\bin\Debug\DocumentFormat.OpenXml.xml
+C:\Users\sasha\OneDrive\Рабочий стол\Diplom\FlowerShop\bin\Debug\DocumentFormat.OpenXml.Framework.xml
+C:\Users\sasha\OneDrive\Рабочий стол\Diplom\FlowerShop\bin\Debug\itextsharp.xml
+C:\Users\sasha\OneDrive\Рабочий стол\Diplom\FlowerShop\obj\Debug\FlowerShop.UI.Admin.fmReports.resources

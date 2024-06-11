@@ -1,15 +1,9 @@
 ﻿using FlowerShop.CLasses;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Xml.Linq;
 
 namespace FlowerShop.UI.Main
 {
@@ -18,11 +12,17 @@ namespace FlowerShop.UI.Main
         public fmWork()
         {
             InitializeComponent();
+            ShowName();
         }
 
         private void btnBack_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void ShowName()
+        {
+            lblFullName.Text = $" Учетная запись:\n{User.UserSurname} {User.UserName} {User.UserPatronymic}";
         }
 
         private void ShowOrders()
@@ -76,10 +76,11 @@ namespace FlowerShop.UI.Main
                         command.CommandType = CommandType.StoredProcedure;
                         command.CommandText = "UpdateOrder";
                         command.Connection = connectionString;
-                        command.Parameters.AddWithValue("@OrderStatus", cmbStatus.SelectedItem);
                         command.Parameters.AddWithValue("@OrderId", dgvOrders.CurrentRow.Cells[0].Value.ToString());
                         command.ExecuteNonQuery();
                     }
+                    MessageBox.Show("Заказ успешно завершен!", "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ShowOrders();
                 }
                 catch (Exception ex)
                 {
@@ -125,7 +126,6 @@ namespace FlowerShop.UI.Main
                 if (currentRow >= 0)
                 {
                     dgvOrders.Rows[currentRow].Selected = true;
-                    cmbStatus.Text = dgvOrders.CurrentRow.Cells[6].Value.ToString().Trim();
                 }
             }
         }
@@ -154,18 +154,17 @@ namespace FlowerShop.UI.Main
                         SqlCommand command = new SqlCommand("SELECT Delivery_guy_id FROM Delivery_guy WHERE Delivery_guy_user_id = @UserId", connection);
                         command.Parameters.AddWithValue("@UserId", User.UserId);
                         int deliveryGuyId = (int)command.ExecuteScalar();
-                        connection.Close();
 
-                        connection.Open();
                         SqlCommand sqlCommand = new SqlCommand();
                         sqlCommand.CommandType = CommandType.StoredProcedure;
-                        sqlCommand.CommandText = "InsertOrderDeliveryGuy";
+                        sqlCommand.CommandText = "InsertDeliveryGuyOrders";
                         sqlCommand.Connection = connection;
                         sqlCommand.Parameters.AddWithValue("@DeliveryGuyId", deliveryGuyId);
                         sqlCommand.Parameters.AddWithValue("@OrderId", dgvOrders.CurrentRow.Cells[0].Value.ToString());
                         sqlCommand.ExecuteNonQuery();
                     }
                     MessageBox.Show("Выбор заказа успешен!", "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ShowOrders();
                 }
                 catch (Exception ex)
                 {
@@ -176,6 +175,38 @@ namespace FlowerShop.UI.Main
             {
                 MessageBox.Show("Выберите заказ!", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private void btnShowOrders_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.connectionString))
+                {
+                    connection.Open();
+                    SqlCommand command = new SqlCommand("SELECT Delivery_guy_id FROM Delivery_guy WHERE Delivery_guy_user_id = @UserId", connection);
+                    command.Parameters.AddWithValue("@UserId", User.UserId);
+                    int deliveryGuyId = (int)command.ExecuteScalar();
+
+                    SqlCommand command2 = new SqlCommand("GetDeliveryGuyOrders", connection);
+                    command2.CommandType = CommandType.StoredProcedure;
+                    command2.Parameters.AddWithValue("@DeliveryGuyId", deliveryGuyId);
+
+                    SqlDataReader reader = command2.ExecuteReader();
+                    DataTable datatable = new DataTable();
+                    datatable.Load(reader);
+                    dgvOrders.DataSource = datatable;
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show($"Произошла ошибка!\n{ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnShowAllOrders_Click(object sender, EventArgs e)
+        {
+            ShowOrders();
         }
     }
 }

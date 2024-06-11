@@ -143,9 +143,9 @@
             this.lblPath.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblPath.Location = new System.Drawing.Point(7, 54);
             this.lblPath.Name = "lblPath";
-            this.lblPath.Size = new System.Drawing.Size(41, 18);
+            this.lblPath.Size = new System.Drawing.Size(101, 18);
             this.lblPath.TabIndex = 1;
-            this.lblPath.Text = "Имя";
+            this.lblPath.Text = "Путь файла";
             // 
             // btnSavePhoto
             // 
@@ -228,7 +228,7 @@
             this.picLogo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.picLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.picLogo.ErrorImage = null;
-            this.picLogo.Image = ((System.Drawing.Image)(resources.GetObject("picLogo.Image")));
+            this.picLogo.Image = global::FlowerShop.Properties.Resources.logo;
             this.picLogo.InitialImage = null;
             this.picLogo.Location = new System.Drawing.Point(0, 0);
             this.picLogo.Margin = new System.Windows.Forms.Padding(4);
@@ -367,11 +367,13 @@
             // 
             // txtMaxDiscount
             // 
+            this.txtMaxDiscount.BackColor = System.Drawing.SystemColors.Control;
             this.txtMaxDiscount.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.txtMaxDiscount.Location = new System.Drawing.Point(20, 176);
             this.txtMaxDiscount.Name = "txtMaxDiscount";
             this.txtMaxDiscount.Size = new System.Drawing.Size(182, 24);
             this.txtMaxDiscount.TabIndex = 33;
+            this.txtMaxDiscount.Text = "50";
             this.txtMaxDiscount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lblMaxDiscount

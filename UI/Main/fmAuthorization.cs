@@ -1,13 +1,9 @@
 ﻿using FlowerShop.CLasses;
 using FlowerShop.UI.Main;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -77,10 +73,18 @@ namespace FlowerShop
                             if (reader.HasRows)
                             {
                                 User.InitializeUser(reader);
-                                fmMenu fmmenu = new fmMenu();
-                                this.Hide();
-                                fmmenu.Show();
-
+                                if (User.UserRoleId == 2)
+                                {
+                                    fmWork fmwork = new fmWork();
+                                    Hide();
+                                    fmwork.Show();
+                                }
+                                else
+                                {
+                                    fmMenu fmmenu = new fmMenu();
+                                    this.Hide();
+                                    fmmenu.Show();
+                                }
                                 Greeting greeting = new Greeting();
                                 string welcomeMessage = greeting.Welcome();
                                 string message = $"{welcomeMessage} {User.UserSurname} {User.UserName} {User.UserPatronymic}!";
@@ -189,6 +193,11 @@ namespace FlowerShop
             graphics.DrawString(word.ToString(), font, Brushes.DarkRed, new Point(picCaptcha.Width / 2 - 40, picCaptcha.Height - 50));
 
             picCaptcha.Image = bitmap;
+        }
+
+        private void fmAuthorization_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

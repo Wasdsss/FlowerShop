@@ -213,7 +213,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "fmCheck";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Чек";
+            this.Text = "Данные о заказе";
             this.pnlBottom.ResumeLayout(false);
             this.pnlCheck.ResumeLayout(false);
             this.pnlTop.ResumeLayout(false);

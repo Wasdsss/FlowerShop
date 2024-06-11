@@ -39,7 +39,7 @@
             this.picQRQode.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.picQRQode.Location = new System.Drawing.Point(12, 12);
             this.picQRQode.Name = "picQRQode";
-            this.picQRQode.Size = new System.Drawing.Size(383, 365);
+            this.picQRQode.Size = new System.Drawing.Size(374, 365);
             this.picQRQode.TabIndex = 0;
             this.picQRQode.TabStop = false;
             // 
@@ -48,7 +48,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MistyRose;
-            this.ClientSize = new System.Drawing.Size(407, 389);
+            this.ClientSize = new System.Drawing.Size(397, 388);
             this.Controls.Add(this.picQRQode);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

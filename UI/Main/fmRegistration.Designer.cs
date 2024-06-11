@@ -84,8 +84,8 @@
             this.picLogo.InitialImage = null;
             this.picLogo.Location = new System.Drawing.Point(3, 3);
             this.picLogo.Name = "picLogo";
-            this.picLogo.Size = new System.Drawing.Size(108, 108);
-            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picLogo.Size = new System.Drawing.Size(114, 108);
+            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picLogo.TabIndex = 9;
             this.picLogo.TabStop = false;
             // 

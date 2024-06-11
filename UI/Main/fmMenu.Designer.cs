@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fmMenu));
             this.btnBack = new System.Windows.Forms.Button();
             this.pnlTop = new System.Windows.Forms.Panel();
+            this.btnReports = new System.Windows.Forms.Button();
             this.btnRegWorker = new System.Windows.Forms.Button();
             this.lblQuantityInStock = new System.Windows.Forms.Label();
             this.lblSearch = new System.Windows.Forms.Label();
@@ -44,7 +45,7 @@
             this.pnlBottom = new System.Windows.Forms.Panel();
             this.btnAddInStock = new System.Windows.Forms.Button();
             this.pnlPhotoProduct = new System.Windows.Forms.Panel();
-            this.picProduct = new System.Windows.Forms.PictureBox();
+            this.pictureProduct = new System.Windows.Forms.PictureBox();
             this.pnlLogoName = new System.Windows.Forms.Panel();
             this.lblName = new System.Windows.Forms.Label();
             this.picLogo = new System.Windows.Forms.PictureBox();
@@ -65,10 +66,12 @@
             this.AddProductToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.DeleteProductToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ChangeDiscountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.pnlTop.SuspendLayout();
             this.pnlBottom.SuspendLayout();
             this.pnlPhotoProduct.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picProduct)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureProduct)).BeginInit();
             this.pnlLogoName.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.pnlDiscount.SuspendLayout();
@@ -82,7 +85,7 @@
             this.btnBack.BackColor = System.Drawing.Color.LightCoral;
             this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnBack.Location = new System.Drawing.Point(907, 93);
+            this.btnBack.Location = new System.Drawing.Point(943, 95);
             this.btnBack.Margin = new System.Windows.Forms.Padding(4);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(103, 32);
@@ -94,6 +97,7 @@
             // pnlTop
             // 
             this.pnlTop.BackColor = System.Drawing.Color.MistyRose;
+            this.pnlTop.Controls.Add(this.btnReports);
             this.pnlTop.Controls.Add(this.btnRegWorker);
             this.pnlTop.Controls.Add(this.lblQuantityInStock);
             this.pnlTop.Controls.Add(this.lblSearch);
@@ -107,17 +111,31 @@
             this.pnlTop.Location = new System.Drawing.Point(0, 0);
             this.pnlTop.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.pnlTop.Name = "pnlTop";
-            this.pnlTop.Size = new System.Drawing.Size(1014, 105);
+            this.pnlTop.Size = new System.Drawing.Size(1049, 105);
             this.pnlTop.TabIndex = 3;
+            // 
+            // btnReports
+            // 
+            this.btnReports.BackColor = System.Drawing.Color.LightCoral;
+            this.btnReports.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnReports.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnReports.Location = new System.Drawing.Point(854, 67);
+            this.btnReports.Name = "btnReports";
+            this.btnReports.Size = new System.Drawing.Size(188, 31);
+            this.btnReports.TabIndex = 9;
+            this.btnReports.Text = "Посмотреть отчеты";
+            this.btnReports.UseVisualStyleBackColor = false;
+            this.btnReports.Visible = false;
+            this.btnReports.Click += new System.EventHandler(this.btnReports_Click);
             // 
             // btnRegWorker
             // 
             this.btnRegWorker.BackColor = System.Drawing.Color.LightCoral;
             this.btnRegWorker.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRegWorker.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnRegWorker.Location = new System.Drawing.Point(680, 62);
+            this.btnRegWorker.Location = new System.Drawing.Point(647, 67);
             this.btnRegWorker.Name = "btnRegWorker";
-            this.btnRegWorker.Size = new System.Drawing.Size(211, 31);
+            this.btnRegWorker.Size = new System.Drawing.Size(201, 31);
             this.btnRegWorker.TabIndex = 7;
             this.btnRegWorker.Text = "Добавить доставщика";
             this.btnRegWorker.UseVisualStyleBackColor = false;
@@ -128,7 +146,7 @@
             // 
             this.lblQuantityInStock.AutoSize = true;
             this.lblQuantityInStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblQuantityInStock.Location = new System.Drawing.Point(9, 75);
+            this.lblQuantityInStock.Location = new System.Drawing.Point(22, 73);
             this.lblQuantityInStock.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblQuantityInStock.Name = "lblQuantityInStock";
             this.lblQuantityInStock.Size = new System.Drawing.Size(233, 18);
@@ -139,7 +157,7 @@
             // 
             this.lblSearch.AutoSize = true;
             this.lblSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblSearch.Location = new System.Drawing.Point(22, 15);
+            this.lblSearch.Location = new System.Drawing.Point(35, 15);
             this.lblSearch.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSearch.Name = "lblSearch";
             this.lblSearch.Size = new System.Drawing.Size(116, 18);
@@ -150,7 +168,7 @@
             // 
             this.lblFullName.AutoSize = true;
             this.lblFullName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblFullName.Location = new System.Drawing.Point(650, 25);
+            this.lblFullName.Location = new System.Drawing.Point(677, 26);
             this.lblFullName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFullName.Name = "lblFullName";
             this.lblFullName.Size = new System.Drawing.Size(103, 18);
@@ -161,7 +179,7 @@
             // txtSearch
             // 
             this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.txtSearch.Location = new System.Drawing.Point(13, 38);
+            this.txtSearch.Location = new System.Drawing.Point(25, 38);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(4);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(138, 24);
@@ -172,7 +190,7 @@
             // 
             this.lblSorting.AutoSize = true;
             this.lblSorting.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblSorting.Location = new System.Drawing.Point(423, 15);
+            this.lblSorting.Location = new System.Drawing.Point(440, 16);
             this.lblSorting.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSorting.Name = "lblSorting";
             this.lblSorting.Size = new System.Drawing.Size(193, 18);
@@ -187,7 +205,7 @@
             "Все товары",
             "Менее 10%",
             "Более 10%"});
-            this.cmbSortingDiscount.Location = new System.Drawing.Point(181, 36);
+            this.cmbSortingDiscount.Location = new System.Drawing.Point(193, 38);
             this.cmbSortingDiscount.Margin = new System.Windows.Forms.Padding(4);
             this.cmbSortingDiscount.Name = "cmbSortingDiscount";
             this.cmbSortingDiscount.Size = new System.Drawing.Size(213, 26);
@@ -201,7 +219,7 @@
             this.cmbSortingPrice.Items.AddRange(new object[] {
             "По возрастанию",
             "По убыванию"});
-            this.cmbSortingPrice.Location = new System.Drawing.Point(422, 36);
+            this.cmbSortingPrice.Location = new System.Drawing.Point(439, 38);
             this.cmbSortingPrice.Margin = new System.Windows.Forms.Padding(4);
             this.cmbSortingPrice.Name = "cmbSortingPrice";
             this.cmbSortingPrice.Size = new System.Drawing.Size(194, 26);
@@ -212,7 +230,7 @@
             // 
             this.lblFilter.AutoSize = true;
             this.lblFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblFilter.Location = new System.Drawing.Point(178, 14);
+            this.lblFilter.Location = new System.Drawing.Point(190, 15);
             this.lblFilter.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFilter.Name = "lblFilter";
             this.lblFilter.Size = new System.Drawing.Size(217, 18);
@@ -232,10 +250,10 @@
             this.pnlBottom.Controls.Add(this.btnBack);
             this.pnlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnlBottom.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.pnlBottom.Location = new System.Drawing.Point(0, 456);
+            this.pnlBottom.Location = new System.Drawing.Point(0, 492);
             this.pnlBottom.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.pnlBottom.Name = "pnlBottom";
-            this.pnlBottom.Size = new System.Drawing.Size(1014, 130);
+            this.pnlBottom.Size = new System.Drawing.Size(1049, 130);
             this.pnlBottom.TabIndex = 4;
             // 
             // btnAddInStock
@@ -243,7 +261,7 @@
             this.btnAddInStock.BackColor = System.Drawing.Color.LightCoral;
             this.btnAddInStock.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAddInStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnAddInStock.Location = new System.Drawing.Point(839, 58);
+            this.btnAddInStock.Location = new System.Drawing.Point(874, 60);
             this.btnAddInStock.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.btnAddInStock.Name = "btnAddInStock";
             this.btnAddInStock.Size = new System.Drawing.Size(172, 32);
@@ -256,21 +274,20 @@
             // pnlPhotoProduct
             // 
             this.pnlPhotoProduct.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pnlPhotoProduct.Controls.Add(this.picProduct);
-            this.pnlPhotoProduct.Location = new System.Drawing.Point(192, 3);
+            this.pnlPhotoProduct.Controls.Add(this.pictureProduct);
+            this.pnlPhotoProduct.Location = new System.Drawing.Point(193, 3);
             this.pnlPhotoProduct.Name = "pnlPhotoProduct";
-            this.pnlPhotoProduct.Size = new System.Drawing.Size(157, 125);
+            this.pnlPhotoProduct.Size = new System.Drawing.Size(170, 125);
             this.pnlPhotoProduct.TabIndex = 16;
             // 
-            // picProduct
+            // pictureProduct
             // 
-            this.picProduct.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.picProduct.Location = new System.Drawing.Point(0, 0);
-            this.picProduct.Margin = new System.Windows.Forms.Padding(4);
-            this.picProduct.Name = "picProduct";
-            this.picProduct.Size = new System.Drawing.Size(153, 121);
-            this.picProduct.TabIndex = 12;
-            this.picProduct.TabStop = false;
+            this.pictureProduct.Location = new System.Drawing.Point(3, 2);
+            this.pictureProduct.Name = "pictureProduct";
+            this.pictureProduct.Size = new System.Drawing.Size(160, 118);
+            this.pictureProduct.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureProduct.TabIndex = 13;
+            this.pictureProduct.TabStop = false;
             // 
             // pnlLogoName
             // 
@@ -297,14 +314,13 @@
             // picLogo
             // 
             this.picLogo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.picLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.picLogo.ErrorImage = null;
-            this.picLogo.Image = ((System.Drawing.Image)(resources.GetObject("picLogo.Image")));
+            this.picLogo.Image = global::FlowerShop.Properties.Resources.logo;
             this.picLogo.InitialImage = null;
-            this.picLogo.Location = new System.Drawing.Point(0, 0);
+            this.picLogo.Location = new System.Drawing.Point(-1, 0);
             this.picLogo.Margin = new System.Windows.Forms.Padding(4);
             this.picLogo.Name = "picLogo";
-            this.picLogo.Size = new System.Drawing.Size(179, 100);
+            this.picLogo.Size = new System.Drawing.Size(182, 100);
             this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picLogo.TabIndex = 9;
             this.picLogo.TabStop = false;
@@ -315,7 +331,7 @@
             this.pnlDiscount.Controls.Add(this.lblDiscountSize);
             this.pnlDiscount.Controls.Add(this.lblDiscount);
             this.pnlDiscount.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.pnlDiscount.Location = new System.Drawing.Point(711, 3);
+            this.pnlDiscount.Location = new System.Drawing.Point(747, 2);
             this.pnlDiscount.Name = "pnlDiscount";
             this.pnlDiscount.Size = new System.Drawing.Size(300, 54);
             this.pnlDiscount.TabIndex = 14;
@@ -325,7 +341,7 @@
             this.lblDiscountSize.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDiscountSize.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblDiscountSize.Location = new System.Drawing.Point(3, 0);
+            this.lblDiscountSize.Location = new System.Drawing.Point(6, 0);
             this.lblDiscountSize.Name = "lblDiscountSize";
             this.lblDiscountSize.Size = new System.Drawing.Size(287, 22);
             this.lblDiscountSize.TabIndex = 8;
@@ -352,9 +368,9 @@
             this.pnlProduct.Controls.Add(this.lblProductManufacturer);
             this.pnlProduct.Controls.Add(this.lblProductDescription);
             this.pnlProduct.Controls.Add(this.lblProductName);
-            this.pnlProduct.Location = new System.Drawing.Point(355, 3);
+            this.pnlProduct.Location = new System.Drawing.Point(369, 4);
             this.pnlProduct.Name = "pnlProduct";
-            this.pnlProduct.Size = new System.Drawing.Size(348, 125);
+            this.pnlProduct.Size = new System.Drawing.Size(370, 125);
             this.pnlProduct.TabIndex = 13;
             // 
             // lblCostWithDiscount
@@ -364,7 +380,7 @@
             this.lblCostWithDiscount.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblCostWithDiscount.Location = new System.Drawing.Point(248, 94);
             this.lblCostWithDiscount.Name = "lblCostWithDiscount";
-            this.lblCostWithDiscount.Size = new System.Drawing.Size(93, 22);
+            this.lblCostWithDiscount.Size = new System.Drawing.Size(115, 22);
             this.lblCostWithDiscount.TabIndex = 12;
             this.lblCostWithDiscount.Text = "Цена со";
             this.lblCostWithDiscount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -376,7 +392,7 @@
             this.lblCost.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblCost.Location = new System.Drawing.Point(149, 95);
             this.lblCost.Name = "lblCost";
-            this.lblCost.Size = new System.Drawing.Size(93, 20);
+            this.lblCost.Size = new System.Drawing.Size(115, 20);
             this.lblCost.TabIndex = 11;
             this.lblCost.Text = "Цена без скидки:  ";
             this.lblCost.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -388,7 +404,7 @@
             this.lblProductManufacturer.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblProductManufacturer.Location = new System.Drawing.Point(3, 94);
             this.lblProductManufacturer.Name = "lblProductManufacturer";
-            this.lblProductManufacturer.Size = new System.Drawing.Size(140, 22);
+            this.lblProductManufacturer.Size = new System.Drawing.Size(162, 22);
             this.lblProductManufacturer.TabIndex = 9;
             this.lblProductManufacturer.Text = "Производитель: ";
             this.lblProductManufacturer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -400,7 +416,7 @@
             this.lblProductDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblProductDescription.Location = new System.Drawing.Point(3, 29);
             this.lblProductDescription.Name = "lblProductDescription";
-            this.lblProductDescription.Size = new System.Drawing.Size(338, 67);
+            this.lblProductDescription.Size = new System.Drawing.Size(360, 67);
             this.lblProductDescription.TabIndex = 8;
             this.lblProductDescription.Text = "Описание товара: ";
             this.lblProductDescription.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -412,7 +428,7 @@
             this.lblProductName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblProductName.Location = new System.Drawing.Point(3, 4);
             this.lblProductName.Name = "lblProductName";
-            this.lblProductName.Size = new System.Drawing.Size(338, 23);
+            this.lblProductName.Size = new System.Drawing.Size(360, 23);
             this.lblProductName.TabIndex = 7;
             this.lblProductName.Text = "Наименование товара: ";
             this.lblProductName.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -422,7 +438,7 @@
             this.btnWork.BackColor = System.Drawing.Color.LightCoral;
             this.btnWork.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnWork.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnWork.Location = new System.Drawing.Point(711, 58);
+            this.btnWork.Location = new System.Drawing.Point(747, 60);
             this.btnWork.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.btnWork.Name = "btnWork";
             this.btnWork.Size = new System.Drawing.Size(124, 32);
@@ -438,7 +454,7 @@
             this.btnCheckOrder.Cursor = System.Windows.Forms.Cursors.Help;
             this.btnCheckOrder.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCheckOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnCheckOrder.Location = new System.Drawing.Point(711, 93);
+            this.btnCheckOrder.Location = new System.Drawing.Point(747, 95);
             this.btnCheckOrder.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.btnCheckOrder.Name = "btnCheckOrder";
             this.btnCheckOrder.Size = new System.Drawing.Size(192, 32);
@@ -457,15 +473,15 @@
             this.dgvProducts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvProducts.BackgroundColor = System.Drawing.Color.White;
             this.dgvProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProducts.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvProducts.Location = new System.Drawing.Point(0, 105);
+            this.dgvProducts.Location = new System.Drawing.Point(25, 105);
             this.dgvProducts.Margin = new System.Windows.Forms.Padding(4);
             this.dgvProducts.Name = "dgvProducts";
             this.dgvProducts.ReadOnly = true;
             this.dgvProducts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProducts.Size = new System.Drawing.Size(1014, 351);
+            this.dgvProducts.Size = new System.Drawing.Size(1000, 387);
             this.dgvProducts.TabIndex = 2;
             this.dgvProducts.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProducts_CellClick);
+            this.dgvProducts.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvProducts_CellFormatting);
             this.dgvProducts.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvProducts_CellMouseClick);
             // 
             // cmsProducts
@@ -510,12 +526,32 @@
             this.ChangeDiscountToolStripMenuItem.Visible = false;
             this.ChangeDiscountToolStripMenuItem.Click += new System.EventHandler(this.ChangeDiscountToolStripMenuItem_Click);
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.MistyRose;
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel1.Location = new System.Drawing.Point(1025, 105);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(24, 387);
+            this.panel1.TabIndex = 5;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.MistyRose;
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Location = new System.Drawing.Point(0, 105);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(25, 387);
+            this.panel2.TabIndex = 6;
+            // 
             // fmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1014, 586);
+            this.ClientSize = new System.Drawing.Size(1049, 622);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.dgvProducts);
             this.Controls.Add(this.pnlBottom);
             this.Controls.Add(this.pnlTop);
@@ -531,7 +567,7 @@
             this.pnlTop.PerformLayout();
             this.pnlBottom.ResumeLayout(false);
             this.pnlPhotoProduct.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picProduct)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureProduct)).EndInit();
             this.pnlLogoName.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.pnlDiscount.ResumeLayout(false);
@@ -576,8 +612,11 @@
         private System.Windows.Forms.Panel pnlLogoName;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Panel pnlPhotoProduct;
-        private System.Windows.Forms.PictureBox picProduct;
         private System.Windows.Forms.ToolStripMenuItem ChangeDiscountToolStripMenuItem;
         private System.Windows.Forms.Button btnAddInStock;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button btnReports;
+        private System.Windows.Forms.PictureBox pictureProduct;
     }
 }

@@ -33,6 +33,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.9.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>packages\BouncyCastle.1.8.9\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=3.0.2.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>packages\DocumentFormat.OpenXml.3.0.2\lib\net46\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml.Framework, Version=3.0.2.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>packages\DocumentFormat.OpenXml.Framework.3.0.2\lib\net46\DocumentFormat.OpenXml.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.3, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>packages\iTextSharp.5.5.13.3\lib\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="QRCoder, Version=1.5.1.0, Culture=neutral, PublicKeyToken=c4ed5b9ae8358a28, processorArchitecture=MSIL">
@@ -55,11 +67,22 @@
     <Compile Include="CLasses\Greeting.cs" />
     <Compile Include="CLasses\Order.cs" />
     <Compile Include="CLasses\User.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="UI\Admin\fmAddInStock.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UI\Admin\fmAddInStock.Designer.cs">
       <DependentUpon>fmAddInStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Admin\fmReports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Admin\fmReports.Designer.cs">
+      <DependentUpon>fmReports.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Client\fmCheck.cs">
       <SubType>Form</SubType>
@@ -126,6 +149,9 @@
     <EmbeddedResource Include="UI\Admin\fmAddInStock.resx">
       <DependentUpon>fmAddInStock.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Admin\fmReports.resx">
+      <DependentUpon>fmReports.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Client\fmCheck.resx">
       <DependentUpon>fmCheck.cs</DependentUpon>
     </EmbeddedResource>
@@ -140,14 +166,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="UI\Main\fmMenu.resx">
       <DependentUpon>fmMenu.cs</DependentUpon>
     </EmbeddedResource>
@@ -180,9 +201,20 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resourсes\Images\Products\default.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resourсes\Images\Logo and icon\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resourсes\Images\Products\1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Logo\icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

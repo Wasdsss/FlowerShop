@@ -8,10 +8,6 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Net.Mail;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace FlowerShop.UI.Main
@@ -40,16 +36,13 @@ namespace FlowerShop.UI.Main
                     lblFullName.Text = $" Учетная запись:\n{User.UserSurname} {User.UserName} {User.UserPatronymic}";
                     UpdateOrderToolStripMenuItem.Visible = true;
                     break;
-                case 2:
-                    lblFullName.Text = $" Учетная запись:\n{User.UserSurname} {User.UserName} {User.UserPatronymic}";
-                    btnWork.Visible = true;
-                    break;
                 case 3:
                     lblFullName.Text = $" Учетная запись: Администратор";
                     btnRegWorker.Visible = true;
                     DeleteProductToolStripMenuItem.Visible = true;
                     AddProductToolStripMenuItem.Visible = true;
                     ChangeDiscountToolStripMenuItem.Visible = true;
+                    btnReports.Visible = true;
                     break;
                 case 4:
                     lblFullName.Text = $" Вы находитесь в гостевом режиме";
@@ -60,7 +53,6 @@ namespace FlowerShop.UI.Main
         private void btnCheckOrder_Click(object sender, EventArgs e)
         {
             btnCheckOrder.Visible = false;
-
             using (var fmorder = new fmOrder(showOrder))
             {
                 Hide();
@@ -99,6 +91,7 @@ namespace FlowerShop.UI.Main
                     datatable.Load(reader);
                     dgvProducts.DataSource = datatable;
                     dgvProducts.Columns[0].Visible = false;
+                    dgvProducts.Columns[11].Visible = false;
                     lblQuantityInStock.Text = $"Наличие товаров на складе: {dgvProducts.RowCount} из {datatable.Rows.Count}";
                 }
                 catch (Exception ex)
@@ -159,30 +152,31 @@ namespace FlowerShop.UI.Main
 
                 if (cost != costWithDiscoud)
                 {
-                    lblCost.Font = new Font(lblCost.Font, FontStyle.Strikeout);
+                    lblCost.Font = new System.Drawing.Font(lblCost.Font, FontStyle.Strikeout);
                 }
                 else
                 {
-                    lblCost.Font = new Font(lblCost.Font, FontStyle.Regular);
+                    lblCost.Font = new System.Drawing.Font(lblCost.Font, FontStyle.Regular);
                 }
 
                 string projectDirectory = Directory.GetParent(Environment.CurrentDirectory).Parent.FullName;
-                string productPhoto = dgvProducts.CurrentRow.Cells[0].Value.ToString();
-                string photoPath = Path.Combine(projectDirectory, $"Resources\\Images\\Products\\{productPhoto}.jpg");
+                string productPhoto = dgvProducts.CurrentRow.Cells[11].Value.ToString().Trim();
+                string photoPath = Path.Combine(projectDirectory, $"Images\\Product\\{productPhoto}.jpg");
 
                 if (File.Exists(photoPath))
                 {
-                    picProduct.ImageLocation = Path.Combine(projectDirectory, $"Resources\\Images\\Products\\{productPhoto}.jpg");
+                    pictureProduct.ImageLocation = Path.Combine(projectDirectory, $"Images\\Product\\{productPhoto}.jpg");
                 }
                 else
                 {
-                    picProduct.ImageLocation = Path.Combine(projectDirectory, $"Resources\\Images\\Icons and Logos\\picture.png");
+                    //pictureProduct.Image = Properties.Resources.Product;
+                    pictureProduct.ImageLocation = Path.Combine(projectDirectory, $"Images\\Product\\default.png");
                 }
-                lblDiscount.Text = dgvProducts.CurrentRow.Cells[7].Value.ToString();               
+                lblDiscount.Text = dgvProducts.CurrentRow.Cells[7].Value.ToString();
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Произошла ошибка!\n{ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Произошла ошибка!{ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -204,7 +198,7 @@ namespace FlowerShop.UI.Main
             }
             else
             {
-                MessageBox.Show("Выберите товар!");
+                MessageBox.Show("Выберите товар!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -212,8 +206,8 @@ namespace FlowerShop.UI.Main
         {
             string quantityInStock = dgvProducts.CurrentRow.Cells[8].Value.ToString();
             string projectDirectory = Directory.GetParent(Environment.CurrentDirectory).Parent.FullName;
-            string productPhoto = dgvProducts.CurrentRow.Cells[0].Value.ToString();
-            string photoPath = Path.Combine(projectDirectory, $"Resources\\Images\\Products\\{productPhoto}.jpg");
+            string productPhoto = dgvProducts.CurrentRow.Cells[11].Value.ToString();
+            string photoPath = Path.Combine(projectDirectory, $"Images\\Product\\{productPhoto}.jpg");
 
             fmQuantity fmquantity = new fmQuantity();
             fmquantity.Show();
@@ -227,7 +221,7 @@ namespace FlowerShop.UI.Main
                     {
                         if (!File.Exists(photoPath))
                         {
-                            photoPath = Path.Combine(projectDirectory, $"Resources\\Images\\Icons and Logos\\picture.png");
+                            photoPath = Path.Combine(projectDirectory, $"Images\\Product\\default.png");
                         }
 
                         Order order = new Order
@@ -380,6 +374,24 @@ namespace FlowerShop.UI.Main
                 catch (Exception ex)
                 {
                     MessageBox.Show($"Ошибка добавления товаров на склад!\n{ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void btnReports_Click(object sender, EventArgs e)
+        {
+            fmReports fmrep = new fmReports();
+            Hide();
+            fmrep.Show();
+        }
+
+        private void dgvProducts_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            foreach (DataGridViewRow row in dgvProducts.Rows)
+            {
+                if (Convert.ToInt32(row.Cells[8].Value) == 0)
+                {
+                    row.DefaultCellStyle.BackColor = System.Drawing.Color.Gray;
                 }
             }
         }

@@ -1,12 +1,4 @@
-﻿using FlowerShop.UI.Main;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 using System.Windows.Forms;
 
 namespace FlowerShop.UI.Worker
@@ -32,7 +24,7 @@ namespace FlowerShop.UI.Worker
         {
             discount++;
             txtDiscount.Text = discount.ToString();
-            if (discount > 100)
+            if (discount > 50)
             {
                 MessageBox.Show("Недопустимое значение!");
             }

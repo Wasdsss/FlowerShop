@@ -66,6 +66,8 @@
             this.DeleteProductToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.pnlTop.SuspendLayout();
             this.pnlBottom.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -97,7 +99,7 @@
             this.pnlTop.Location = new System.Drawing.Point(0, 0);
             this.pnlTop.Margin = new System.Windows.Forms.Padding(5);
             this.pnlTop.Name = "pnlTop";
-            this.pnlTop.Size = new System.Drawing.Size(908, 93);
+            this.pnlTop.Size = new System.Drawing.Size(882, 93);
             this.pnlTop.TabIndex = 4;
             // 
             // txtFlat
@@ -204,7 +206,7 @@
             // 
             this.lblFullName.AutoSize = true;
             this.lblFullName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblFullName.Location = new System.Drawing.Point(607, 31);
+            this.lblFullName.Location = new System.Drawing.Point(631, 30);
             this.lblFullName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFullName.Name = "lblFullName";
             this.lblFullName.Size = new System.Drawing.Size(103, 18);
@@ -220,10 +222,10 @@
             this.pnlBottom.Controls.Add(this.panel1);
             this.pnlBottom.Controls.Add(this.pnlProductDescription);
             this.pnlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlBottom.Location = new System.Drawing.Point(0, 381);
+            this.pnlBottom.Location = new System.Drawing.Point(0, 385);
             this.pnlBottom.Margin = new System.Windows.Forms.Padding(5);
             this.pnlBottom.Name = "pnlBottom";
-            this.pnlBottom.Size = new System.Drawing.Size(908, 132);
+            this.pnlBottom.Size = new System.Drawing.Size(882, 132);
             this.pnlBottom.TabIndex = 5;
             // 
             // panel3
@@ -283,7 +285,7 @@
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.pictureBox1.ErrorImage = null;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Image = global::FlowerShop.Properties.Resources.logo;
             this.pictureBox1.InitialImage = null;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
@@ -328,7 +330,7 @@
             this.panel1.Controls.Add(this.btnBack);
             this.panel1.Location = new System.Drawing.Point(683, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(222, 124);
+            this.panel1.Size = new System.Drawing.Size(196, 124);
             this.panel1.TabIndex = 13;
             // 
             // btnCheck
@@ -336,10 +338,10 @@
             this.btnCheck.BackColor = System.Drawing.Color.LightCoral;
             this.btnCheck.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnCheck.Location = new System.Drawing.Point(3, 43);
+            this.btnCheck.Location = new System.Drawing.Point(3, 41);
             this.btnCheck.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.btnCheck.Name = "btnCheck";
-            this.btnCheck.Size = new System.Drawing.Size(212, 36);
+            this.btnCheck.Size = new System.Drawing.Size(186, 36);
             this.btnCheck.TabIndex = 17;
             this.btnCheck.Text = "Получить чек";
             this.btnCheck.UseVisualStyleBackColor = false;
@@ -354,7 +356,7 @@
             this.btnMakeOrder.Location = new System.Drawing.Point(3, 3);
             this.btnMakeOrder.Margin = new System.Windows.Forms.Padding(3, 3, 3, 1);
             this.btnMakeOrder.Name = "btnMakeOrder";
-            this.btnMakeOrder.Size = new System.Drawing.Size(212, 36);
+            this.btnMakeOrder.Size = new System.Drawing.Size(186, 36);
             this.btnMakeOrder.TabIndex = 16;
             this.btnMakeOrder.Text = "Заказать";
             this.btnMakeOrder.UseVisualStyleBackColor = false;
@@ -365,10 +367,10 @@
             this.btnBack.BackColor = System.Drawing.Color.LightCoral;
             this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnBack.Location = new System.Drawing.Point(3, 81);
+            this.btnBack.Location = new System.Drawing.Point(3, 79);
             this.btnBack.Margin = new System.Windows.Forms.Padding(3, 1, 3, 3);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(212, 36);
+            this.btnBack.Size = new System.Drawing.Size(186, 36);
             this.btnBack.TabIndex = 15;
             this.btnBack.Text = "Назад";
             this.btnBack.UseVisualStyleBackColor = false;
@@ -447,13 +449,12 @@
             // 
             // lstOrder
             // 
-            this.lstOrder.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lstOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lstOrder.FormattingEnabled = true;
             this.lstOrder.ItemHeight = 16;
-            this.lstOrder.Location = new System.Drawing.Point(0, 93);
+            this.lstOrder.Location = new System.Drawing.Point(25, 93);
             this.lstOrder.Name = "lstOrder";
-            this.lstOrder.Size = new System.Drawing.Size(908, 288);
+            this.lstOrder.Size = new System.Drawing.Size(833, 292);
             this.lstOrder.TabIndex = 6;
             this.lstOrder.SelectedIndexChanged += new System.EventHandler(this.lstOrder_SelectedIndexChanged);
             this.lstOrder.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lstOrder_MouseDown);
@@ -482,12 +483,32 @@
             this.contextMenuStrip2.Name = "contextMenuStrip2";
             this.contextMenuStrip2.Size = new System.Drawing.Size(61, 4);
             // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.MistyRose;
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel4.Location = new System.Drawing.Point(858, 93);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(24, 292);
+            this.panel4.TabIndex = 8;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.MistyRose;
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel5.Location = new System.Drawing.Point(0, 93);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(25, 292);
+            this.panel5.TabIndex = 9;
+            // 
             // fmOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(908, 513);
+            this.ClientSize = new System.Drawing.Size(882, 517);
+            this.Controls.Add(this.panel5);
+            this.Controls.Add(this.panel4);
             this.Controls.Add(this.lstOrder);
             this.Controls.Add(this.pnlBottom);
             this.Controls.Add(this.pnlTop);
@@ -496,7 +517,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "fmOrder";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Корзина";
+            this.Text = "Меню заказа";
             this.pnlTop.ResumeLayout(false);
             this.pnlTop.PerformLayout();
             this.pnlBottom.ResumeLayout(false);
@@ -551,5 +572,7 @@
         private System.Windows.Forms.TextBox txtHouse;
         private System.Windows.Forms.TextBox txtStreet;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel5;
     }
 }

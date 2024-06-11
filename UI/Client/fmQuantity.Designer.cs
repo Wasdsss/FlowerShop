@@ -96,7 +96,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "fmQuantity";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Количество";
+            this.Text = "Количество товара";
             this.ResumeLayout(false);
             this.PerformLayout();
 

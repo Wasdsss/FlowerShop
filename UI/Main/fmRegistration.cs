@@ -1,13 +1,7 @@
 ﻿using FlowerShop.CLasses;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace FlowerShop.UI.Main
@@ -105,8 +99,16 @@ namespace FlowerShop.UI.Main
 
         private void fmRegistration_FormClosed(object sender, FormClosedEventArgs e)
         {
-            fmAuthorization fmauthorization = new fmAuthorization();
-            fmauthorization.Show();
+            if (User.UserRoleId == 3)
+            {
+                fmMenu fmmenu = new fmMenu();
+                fmmenu.Show();
+            }
+            else
+            {
+                fmAuthorization fmauth = new fmAuthorization();
+                fmauth.Show();
+            }
         }
     }
 }

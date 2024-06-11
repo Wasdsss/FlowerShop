@@ -46,9 +46,9 @@
             this.chkSave = new System.Windows.Forms.CheckBox();
             this.linklblRegistration = new System.Windows.Forms.LinkLabel();
             this.toolTipGuest = new System.Windows.Forms.ToolTip(this.components);
-            this.picCaptcha = new System.Windows.Forms.PictureBox();
             this.txtCaptcha = new System.Windows.Forms.TextBox();
             this.lblCaptcha = new System.Windows.Forms.Label();
+            this.picCaptcha = new System.Windows.Forms.PictureBox();
             this.pnlTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.pnlBottom.SuspendLayout();
@@ -253,17 +253,6 @@
             this.toolTipGuest.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.toolTipGuest.ToolTipTitle = "Подсказка";
             // 
-            // picCaptcha
-            // 
-            this.picCaptcha.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.picCaptcha.Location = new System.Drawing.Point(39, 322);
-            this.picCaptcha.Name = "picCaptcha";
-            this.picCaptcha.Size = new System.Drawing.Size(234, 103);
-            this.picCaptcha.TabIndex = 11;
-            this.picCaptcha.TabStop = false;
-            this.picCaptcha.Visible = false;
-            // 
             // txtCaptcha
             // 
             this.txtCaptcha.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -285,6 +274,17 @@
             this.lblCaptcha.TabIndex = 13;
             this.lblCaptcha.Text = "Капча";
             this.lblCaptcha.Visible = false;
+            // 
+            // picCaptcha
+            // 
+            this.picCaptcha.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.picCaptcha.Location = new System.Drawing.Point(39, 322);
+            this.picCaptcha.Name = "picCaptcha";
+            this.picCaptcha.Size = new System.Drawing.Size(234, 103);
+            this.picCaptcha.TabIndex = 11;
+            this.picCaptcha.TabStop = false;
+            this.picCaptcha.Visible = false;
             // 
             // fmAuthorization
             // 
@@ -312,6 +312,7 @@
             this.Name = "fmAuthorization";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Авторизация";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.fmAuthorization_FormClosed);
             this.pnlTop.ResumeLayout(false);
             this.pnlTop.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();

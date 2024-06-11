@@ -37,18 +37,19 @@
             this.lblFilter = new System.Windows.Forms.Label();
             this.dgvOrders = new System.Windows.Forms.DataGridView();
             this.pnlBottom = new System.Windows.Forms.Panel();
+            this.btnShowAllOrders = new System.Windows.Forms.Button();
+            this.btnShowOrders = new System.Windows.Forms.Button();
             this.btnTakeOrder = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.pnlLogoName = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblName = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.cmbStatus = new System.Windows.Forms.ComboBox();
             this.btnChangeStatus = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
-            this.btnShowOrders = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.pnlTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrders)).BeginInit();
             this.pnlBottom.SuspendLayout();
@@ -70,7 +71,7 @@
             this.pnlTop.Location = new System.Drawing.Point(0, 0);
             this.pnlTop.Margin = new System.Windows.Forms.Padding(5);
             this.pnlTop.Name = "pnlTop";
-            this.pnlTop.Size = new System.Drawing.Size(861, 80);
+            this.pnlTop.Size = new System.Drawing.Size(917, 80);
             this.pnlTop.TabIndex = 4;
             // 
             // lblFullName
@@ -145,56 +146,72 @@
             this.dgvOrders.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvOrders.BackgroundColor = System.Drawing.Color.White;
             this.dgvOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvOrders.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvOrders.Location = new System.Drawing.Point(0, 80);
+            this.dgvOrders.Location = new System.Drawing.Point(25, 80);
             this.dgvOrders.Margin = new System.Windows.Forms.Padding(4);
             this.dgvOrders.Name = "dgvOrders";
             this.dgvOrders.ReadOnly = true;
             this.dgvOrders.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvOrders.Size = new System.Drawing.Size(861, 469);
+            this.dgvOrders.Size = new System.Drawing.Size(868, 368);
             this.dgvOrders.TabIndex = 5;
             this.dgvOrders.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvOrders_CellMouseClick);
             // 
             // pnlBottom
             // 
             this.pnlBottom.BackColor = System.Drawing.Color.MistyRose;
+            this.pnlBottom.Controls.Add(this.btnShowAllOrders);
             this.pnlBottom.Controls.Add(this.btnShowOrders);
             this.pnlBottom.Controls.Add(this.btnTakeOrder);
-            this.pnlBottom.Controls.Add(this.label1);
             this.pnlBottom.Controls.Add(this.pnlLogoName);
-            this.pnlBottom.Controls.Add(this.cmbStatus);
             this.pnlBottom.Controls.Add(this.btnChangeStatus);
             this.pnlBottom.Controls.Add(this.btnBack);
             this.pnlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlBottom.Location = new System.Drawing.Point(0, 418);
+            this.pnlBottom.Location = new System.Drawing.Point(0, 448);
             this.pnlBottom.Margin = new System.Windows.Forms.Padding(5);
             this.pnlBottom.Name = "pnlBottom";
-            this.pnlBottom.Size = new System.Drawing.Size(861, 131);
+            this.pnlBottom.Size = new System.Drawing.Size(917, 131);
             this.pnlBottom.TabIndex = 6;
+            // 
+            // btnShowAllOrders
+            // 
+            this.btnShowAllOrders.BackColor = System.Drawing.Color.LightCoral;
+            this.btnShowAllOrders.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnShowAllOrders.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnShowAllOrders.Location = new System.Drawing.Point(207, 72);
+            this.btnShowAllOrders.Margin = new System.Windows.Forms.Padding(5);
+            this.btnShowAllOrders.Name = "btnShowAllOrders";
+            this.btnShowAllOrders.Size = new System.Drawing.Size(167, 34);
+            this.btnShowAllOrders.TabIndex = 21;
+            this.btnShowAllOrders.Text = "Все заказы";
+            this.btnShowAllOrders.UseVisualStyleBackColor = false;
+            this.btnShowAllOrders.Click += new System.EventHandler(this.btnShowAllOrders_Click);
+            // 
+            // btnShowOrders
+            // 
+            this.btnShowOrders.BackColor = System.Drawing.Color.LightCoral;
+            this.btnShowOrders.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnShowOrders.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnShowOrders.Location = new System.Drawing.Point(384, 72);
+            this.btnShowOrders.Margin = new System.Windows.Forms.Padding(5);
+            this.btnShowOrders.Name = "btnShowOrders";
+            this.btnShowOrders.Size = new System.Drawing.Size(160, 34);
+            this.btnShowOrders.TabIndex = 20;
+            this.btnShowOrders.Text = "Свои заказы";
+            this.btnShowOrders.UseVisualStyleBackColor = false;
+            this.btnShowOrders.Click += new System.EventHandler(this.btnShowOrders_Click);
             // 
             // btnTakeOrder
             // 
             this.btnTakeOrder.BackColor = System.Drawing.Color.LightCoral;
             this.btnTakeOrder.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnTakeOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnTakeOrder.Location = new System.Drawing.Point(204, 83);
+            this.btnTakeOrder.Location = new System.Drawing.Point(207, 22);
             this.btnTakeOrder.Margin = new System.Windows.Forms.Padding(5);
             this.btnTakeOrder.Name = "btnTakeOrder";
-            this.btnTakeOrder.Size = new System.Drawing.Size(246, 34);
+            this.btnTakeOrder.Size = new System.Drawing.Size(167, 34);
             this.btnTakeOrder.TabIndex = 19;
             this.btnTakeOrder.Text = "Взять заказ";
             this.btnTakeOrder.UseVisualStyleBackColor = false;
             this.btnTakeOrder.Click += new System.EventHandler(this.btnTakeOrder_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(351, 12);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(116, 18);
-            this.label1.TabIndex = 18;
-            this.label1.Text = "Новый статус";
             // 
             // pnlLogoName
             // 
@@ -234,7 +251,7 @@
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.pictureBox1.ErrorImage = null;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Image = global::FlowerShop.Properties.Resources.logo;
             this.pictureBox1.InitialImage = null;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
@@ -271,31 +288,17 @@
             this.pictureBox2.TabIndex = 9;
             this.pictureBox2.TabStop = false;
             // 
-            // cmbStatus
-            // 
-            this.cmbStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.cmbStatus.FormattingEnabled = true;
-            this.cmbStatus.Items.AddRange(new object[] {
-            "В ожидании",
-            "В пути",
-            "Доставлено"});
-            this.cmbStatus.Location = new System.Drawing.Point(278, 34);
-            this.cmbStatus.Margin = new System.Windows.Forms.Padding(4);
-            this.cmbStatus.Name = "cmbStatus";
-            this.cmbStatus.Size = new System.Drawing.Size(255, 26);
-            this.cmbStatus.TabIndex = 11;
-            // 
             // btnChangeStatus
             // 
             this.btnChangeStatus.BackColor = System.Drawing.Color.LightCoral;
             this.btnChangeStatus.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnChangeStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnChangeStatus.Location = new System.Drawing.Point(573, 29);
+            this.btnChangeStatus.Location = new System.Drawing.Point(384, 22);
             this.btnChangeStatus.Margin = new System.Windows.Forms.Padding(5);
             this.btnChangeStatus.Name = "btnChangeStatus";
-            this.btnChangeStatus.Size = new System.Drawing.Size(274, 34);
+            this.btnChangeStatus.Size = new System.Drawing.Size(160, 34);
             this.btnChangeStatus.TabIndex = 0;
-            this.btnChangeStatus.Text = "Изменить статус";
+            this.btnChangeStatus.Text = "Доставлено";
             this.btnChangeStatus.UseVisualStyleBackColor = false;
             this.btnChangeStatus.Click += new System.EventHandler(this.btnChangeStatus_Click);
             // 
@@ -304,34 +307,41 @@
             this.btnBack.BackColor = System.Drawing.Color.LightCoral;
             this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnBack.Location = new System.Drawing.Point(739, 83);
+            this.btnBack.Location = new System.Drawing.Point(736, 49);
             this.btnBack.Margin = new System.Windows.Forms.Padding(4);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(108, 34);
+            this.btnBack.Size = new System.Drawing.Size(157, 34);
             this.btnBack.TabIndex = 0;
             this.btnBack.Text = "Назад";
             this.btnBack.UseVisualStyleBackColor = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
-            // btnShowOrders
+            // panel1
             // 
-            this.btnShowOrders.BackColor = System.Drawing.Color.LightCoral;
-            this.btnShowOrders.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnShowOrders.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnShowOrders.Location = new System.Drawing.Point(474, 83);
-            this.btnShowOrders.Margin = new System.Windows.Forms.Padding(5);
-            this.btnShowOrders.Name = "btnShowOrders";
-            this.btnShowOrders.Size = new System.Drawing.Size(243, 34);
-            this.btnShowOrders.TabIndex = 20;
-            this.btnShowOrders.Text = "Посмотреть заказы";
-            this.btnShowOrders.UseVisualStyleBackColor = false;
+            this.panel1.BackColor = System.Drawing.Color.MistyRose;
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel1.Location = new System.Drawing.Point(893, 80);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(24, 368);
+            this.panel1.TabIndex = 7;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.MistyRose;
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel3.Location = new System.Drawing.Point(0, 80);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(25, 368);
+            this.panel3.TabIndex = 8;
             // 
             // fmWork
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(861, 549);
+            this.ClientSize = new System.Drawing.Size(917, 579);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlBottom);
             this.Controls.Add(this.dgvOrders);
             this.Controls.Add(this.pnlTop);
@@ -347,7 +357,6 @@
             this.pnlTop.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrders)).EndInit();
             this.pnlBottom.ResumeLayout(false);
-            this.pnlBottom.PerformLayout();
             this.pnlLogoName.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -368,15 +377,16 @@
         private System.Windows.Forms.Panel pnlBottom;
         private System.Windows.Forms.Button btnChangeStatus;
         private System.Windows.Forms.Button btnBack;
-        private System.Windows.Forms.ComboBox cmbStatus;
         private System.Windows.Forms.Panel pnlLogoName;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnTakeOrder;
         private System.Windows.Forms.Button btnShowOrders;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button btnShowAllOrders;
     }
 }
