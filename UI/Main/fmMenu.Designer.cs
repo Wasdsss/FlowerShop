@@ -378,7 +378,7 @@
             this.lblCostWithDiscount.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCostWithDiscount.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblCostWithDiscount.Location = new System.Drawing.Point(248, 94);
+            this.lblCostWithDiscount.Location = new System.Drawing.Point(248, 100);
             this.lblCostWithDiscount.Name = "lblCostWithDiscount";
             this.lblCostWithDiscount.Size = new System.Drawing.Size(115, 22);
             this.lblCostWithDiscount.TabIndex = 12;
@@ -390,7 +390,7 @@
             this.lblCost.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCost.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblCost.Location = new System.Drawing.Point(149, 95);
+            this.lblCost.Location = new System.Drawing.Point(147, 101);
             this.lblCost.Name = "lblCost";
             this.lblCost.Size = new System.Drawing.Size(115, 20);
             this.lblCost.TabIndex = 11;
@@ -402,7 +402,7 @@
             this.lblProductManufacturer.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblProductManufacturer.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblProductManufacturer.Location = new System.Drawing.Point(3, 94);
+            this.lblProductManufacturer.Location = new System.Drawing.Point(3, 99);
             this.lblProductManufacturer.Name = "lblProductManufacturer";
             this.lblProductManufacturer.Size = new System.Drawing.Size(162, 22);
             this.lblProductManufacturer.TabIndex = 9;
@@ -413,10 +413,10 @@
             // 
             this.lblProductDescription.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblProductDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblProductDescription.Location = new System.Drawing.Point(3, 29);
+            this.lblProductDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblProductDescription.Location = new System.Drawing.Point(3, 27);
             this.lblProductDescription.Name = "lblProductDescription";
-            this.lblProductDescription.Size = new System.Drawing.Size(360, 67);
+            this.lblProductDescription.Size = new System.Drawing.Size(360, 74);
             this.lblProductDescription.TabIndex = 8;
             this.lblProductDescription.Text = "Описание товара: ";
             this.lblProductDescription.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

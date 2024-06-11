@@ -338,7 +338,7 @@
             this.btnCheck.BackColor = System.Drawing.Color.LightCoral;
             this.btnCheck.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnCheck.Location = new System.Drawing.Point(3, 41);
+            this.btnCheck.Location = new System.Drawing.Point(3, 43);
             this.btnCheck.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.btnCheck.Name = "btnCheck";
             this.btnCheck.Size = new System.Drawing.Size(186, 36);
@@ -367,7 +367,7 @@
             this.btnBack.BackColor = System.Drawing.Color.LightCoral;
             this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnBack.Location = new System.Drawing.Point(3, 79);
+            this.btnBack.Location = new System.Drawing.Point(3, 84);
             this.btnBack.Margin = new System.Windows.Forms.Padding(3, 1, 3, 3);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(186, 36);
