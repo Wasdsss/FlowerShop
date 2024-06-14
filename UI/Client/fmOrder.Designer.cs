@@ -244,6 +244,7 @@
             this.picProduct.Margin = new System.Windows.Forms.Padding(4);
             this.picProduct.Name = "picProduct";
             this.picProduct.Size = new System.Drawing.Size(152, 119);
+            this.picProduct.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picProduct.TabIndex = 12;
             this.picProduct.TabStop = false;
             // 

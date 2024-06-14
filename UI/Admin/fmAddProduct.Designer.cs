@@ -187,7 +187,6 @@
             this.btnAddProduct.TabIndex = 0;
             this.btnAddProduct.Text = "Добавить товар";
             this.btnAddProduct.UseVisualStyleBackColor = false;
-            this.btnAddProduct.Visible = false;
             this.btnAddProduct.Click += new System.EventHandler(this.btnAddProduct_Click);
             // 
             // pnlShop
